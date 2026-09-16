@@ -4,7 +4,7 @@
     background-color: #f0f2f0;
 }
 .login-banner {
-    background-color: #0f9b8e;
+    background-color: #9333EA;
     color: #ffffff;
     text-align: center;
     padding: 60px 0 100px;
@@ -51,7 +51,7 @@ box-shadow: 0 4px 12px rgba(0,0,0,0,15);
     gap: 4px;
 }
 .login-link {
-    color: #0f9b8e;
+    color: #9333EA;
     text-decoration: none;
 
 }
@@ -59,7 +59,7 @@ box-shadow: 0 4px 12px rgba(0,0,0,0,15);
 .login-button {
   width: 100%;
   padding: 12px;
-  background-color: #0f9b8e;
+  background-color: #9333EA;
   color: #ffffff;
   border: none;
   border-radius: 4px;

@@ -34,8 +34,9 @@ export default function Login()
                 setError("Invalid credentials");
                 return;
              }
-            setError("");
+           setError("");
             localStorage.setItem("loggedInUser",JSON.stringify(foundUser));
+            localStorage.setItem("cornor_ems_auth", "true");
             if (foundUser.role === "admin")
             {
               navigate("/admin-dashboard");
