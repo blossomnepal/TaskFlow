@@ -23,7 +23,7 @@ const initialState = {
 export default function EmployeeForm({
   initialValues,
   onSubmit,
-  submitLabel = "Add Employee",
+  submitLabel = "+ Add Employee",
 }) {
   const [values, setValues] = useState(
     initialValues || initialState
@@ -266,12 +266,12 @@ export default function EmployeeForm({
       {/* Buttons */}
       <div className="flex items-center gap-3 pt-2">
 
-        <button
-          type="submit"
-          className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2.5 rounded-md transition-colors"
-        >
-          {submitLabel}
-        </button>
+        <button 
+  type="submit" 
+  className="bg-[#9333EA] hover:bg-[#7E22CE] text-white font-medium px-5 py-2.5 rounded-md transition-colors"
+>
+  {submitLabel}
+</button>
 
       </div>
 
