@@ -38,25 +38,18 @@ export default function EmployeeDashboard() {
     status: "Pending",
   });
 
-  // ==========================================
-  // LOAD PROJECTS
-  // ==========================================
-
+  
   useEffect(() => {
     setProjects(getProjects());
   }, []);
 
-  // ==========================================
-  // EXPAND / COLLAPSE
-  // ==========================================
+ 
 
   function toggleExpand(id) {
     setExpandedId(expandedId === id ? null : id);
   }
 
-  // ==========================================
-  // HANDLE INPUT
-  // ==========================================
+  
 
   function handleChange(e) {
     setFormData({
@@ -65,9 +58,7 @@ export default function EmployeeDashboard() {
     });
   }
 
-  // ==========================================
-  // RESET FORM
-  // ==========================================
+  
 
   function resetForm() {
     setFormData({
@@ -82,9 +73,7 @@ export default function EmployeeDashboard() {
     setShowForm(false);
   }
 
-  // ==========================================
-  // CREATE PROJECT
-  // ==========================================
+  
 
   function handleAddClick() {
     setEditingId(null);
@@ -100,9 +89,6 @@ export default function EmployeeDashboard() {
     setShowForm(true);
   }
 
-  // ==========================================
-  // EDIT PROJECT
-  // ==========================================
 
   function handleEditClick(project) {
     setFormData({
@@ -127,9 +113,7 @@ export default function EmployeeDashboard() {
     setShowForm(true);
   }
 
-  // ==========================================
-  // SUBMIT PROJECT
-  // ==========================================
+  
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -176,9 +160,7 @@ export default function EmployeeDashboard() {
     );
   }
 
-  // ==========================================
-  // DELETE
-  // ==========================================
+  
 
   function handleDelete(id) {
     setDeleteId(id);
@@ -204,9 +186,7 @@ export default function EmployeeDashboard() {
     setDeleteId(null);
   }
 
-  // ==========================================
-  // FILTER
-  // ==========================================
+  
 
   const filteredProjects =
     filter === "All"
@@ -216,18 +196,13 @@ export default function EmployeeDashboard() {
             project.status === filter
         );
 
-  // ==========================================
-  // TODAY
-  // ==========================================
+  
 
   const today = new Date()
     .toISOString()
     .split("T")[0];
 
-  // ==========================================
-  // COUNTS
-  // ==========================================
-
+  
   const totalProjects =
     projects.length;
 
@@ -249,9 +224,7 @@ export default function EmployeeDashboard() {
         project.status === "Completed"
     ).length;
 
-  // ==========================================
-  // OVERDUE
-  // ==========================================
+  
 
   function isOverdue(project) {
     return (
@@ -261,9 +234,7 @@ export default function EmployeeDashboard() {
     );
   }
 
-  // ==========================================
-  // FORMAT DATE
-  // ==========================================
+  
 
   function formatDate(date) {
     if (!date) {
@@ -286,28 +257,20 @@ export default function EmployeeDashboard() {
     );
   }
 
-  // ==========================================
-  // RETURN
-  // ==========================================
+  
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans flex">
 
-      {/* ======================================
-          SIDEBAR
-      ====================================== */}
+      
 
       <EmployeeSidebar />
 
-      {/* ======================================
-          MAIN CONTENT
-      ====================================== */}
+      
 
       <main className="flex-1 min-w-0 p-6">
 
-        {/* ======================================
-            HEADER
-        ====================================== */}
+        
 
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
 
@@ -332,9 +295,7 @@ export default function EmployeeDashboard() {
 
         </div>
 
-        {/* ======================================
-            STATISTICS
-        ====================================== */}
+        
 
         {!showForm && (
 
@@ -400,9 +361,7 @@ export default function EmployeeDashboard() {
 
         )}
 
-        {/* ======================================
-            FILTER TABS
-        ====================================== */}
+        
 
         {!showForm && (
 
@@ -435,9 +394,7 @@ export default function EmployeeDashboard() {
 
         )}
 
-        {/* ======================================
-            SUCCESS MESSAGE
-        ====================================== */}
+        
 
         {message && (
 
@@ -489,9 +446,7 @@ export default function EmployeeDashboard() {
 
         )}
 
-        {/* ======================================
-            DELETE CONFIRMATION
-        ====================================== */}
+        
 
         {deleteId && (
 
@@ -533,9 +488,7 @@ export default function EmployeeDashboard() {
 
         )}
 
-        {/* ======================================
-            CREATE / EDIT FORM
-        ====================================== */}
+        
 
         {showForm && (
 
@@ -719,9 +672,7 @@ export default function EmployeeDashboard() {
 
         )}
 
-        {/* ======================================
-            PROJECT LIST
-        ====================================== */}
+        
 
         {!showForm && (
 
@@ -763,10 +714,7 @@ export default function EmployeeDashboard() {
                         className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-shadow"
                       >
 
-                        {/* ==================================
-                            COLLAPSED PROJECT HEADER
-                            DUE DATE IS NOT SHOWN HERE
-                        ================================== */}
+                       
 
                         <button
                           type="button"
@@ -829,11 +777,7 @@ export default function EmployeeDashboard() {
 
                         </button>
 
-                        {/* ==================================
-                            EXPANDED DETAILS
-                            DUE DATE APPEARS ONLY HERE
-                        ================================== */}
-
+                        
                         {isOpen && (
 
                           <div className="border-t border-slate-100 px-5 py-5">
@@ -917,9 +861,7 @@ export default function EmployeeDashboard() {
 
                             </div>
 
-                            {/* ==================================
-                                EDIT DELETE
-                            ================================== */}
+                           
 
                             <div className="flex justify-end gap-2 mt-5 pt-4 border-t border-slate-100">
 

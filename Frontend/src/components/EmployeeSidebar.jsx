@@ -27,9 +27,7 @@ const EmployeeSidebar = () => {
   return (
     <aside className="w-64 h-screen bg-white border-r border-slate-200 flex flex-col p-4 font-sans text-slate-700 select-none shadow-sm">
 
-      {/* =========================
-          BRANDING
-      ========================= */}
+      
 
       <div className="flex items-center gap-3 px-3 py-4 mb-4">
         <div className="w-9 h-9 rounded-xl bg-[#9333EA] flex items-center justify-center shadow-md shadow-purple-200">
@@ -47,9 +45,6 @@ const EmployeeSidebar = () => {
       </div>
 
 
-      {/* =========================
-          NAVIGATION
-      ========================= */}
 
       <nav className="space-y-1.5">
 
@@ -99,9 +94,7 @@ const EmployeeSidebar = () => {
         })}
 
 
-        {/* =========================
-            LOGOUT
-        ========================= */}
+        
 
         <button
           onClick={handleLogout}
