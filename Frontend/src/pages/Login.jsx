@@ -54,7 +54,6 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center bg-[#F5F0FC] font-[Poppins] px-4">
       <div className="w-full max-w-sm">
         <div className="bg-white rounded-2xl shadow-lg border border-slate-100 p-8">
-          {/* Icon badge */}
           <div className="flex flex-col items-center mb-6">
             <div className="w-14 h-14 rounded-2xl bg-[#9333EA] flex items-center justify-center shadow-md shadow-purple-200 mb-3">
               <ClipboardCheck size={28} color="#ffffff" />
@@ -62,14 +61,11 @@ export default function Login() {
             <h1 className="text-xl font-bold text-slate-800">
               Task<span className="text-[#9333EA]">Flow</span>
             </h1>
-            
           </div>
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
-                Email
-              </label>
+              <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">Email</label>
               <div className="relative">
                 <Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
                 <input
@@ -83,9 +79,7 @@ export default function Login() {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
-                Password
-              </label>
+              <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">Password</label>
               <div className="relative">
                 <Lock size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
                 <input
@@ -116,8 +110,6 @@ export default function Login() {
             </button>
           </form>
         </div>
-
-        
       </div>
     </div>
   );

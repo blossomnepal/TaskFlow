@@ -1,0 +1,123 @@
+import { NavLink, useNavigate } from "react-router-dom";
+import {
+  ClipboardList,
+  LogOut,
+  ClipboardCheck,
+} from "lucide-react";
+
+const navItems = [
+  {
+    name: "Projects",
+    icon: ClipboardList,
+    path: "/employee-dashboard",
+    end: true,
+  },
+];
+
+const EmployeeSidebar = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("loggedInUser");
+    localStorage.removeItem("cornor_ems_auth");
+
+    navigate("/");
+  };
+
+  return (
+    <aside className="w-64 h-screen bg-white border-r border-slate-200 flex flex-col p-4 font-sans text-slate-700 select-none shadow-sm">
+
+      {/* =========================
+          BRANDING
+      ========================= */}
+
+      <div className="flex items-center gap-3 px-3 py-4 mb-4">
+        <div className="w-9 h-9 rounded-xl bg-[#9333EA] flex items-center justify-center shadow-md shadow-purple-200">
+          <ClipboardCheck
+            size={20}
+            color="#ffffff"
+          />
+        </div>
+
+        <div>
+          <h1 className="font-bold text-slate-800 text-lg leading-tight">
+            Task<span className="text-[#9333EA]">Flow</span>
+          </h1>
+        </div>
+      </div>
+
+
+      {/* =========================
+          NAVIGATION
+      ========================= */}
+
+      <nav className="space-y-1.5">
+
+        {/* PROJECTS */}
+
+        {navItems.map((item) => {
+          const Icon = item.icon;
+
+          return (
+            <NavLink
+              key={item.name}
+              to={item.path}
+              end={item.end}
+              className={({ isActive }) =>
+                `w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${
+                  isActive
+                    ? "bg-purple-50 text-[#9333EA] shadow-sm"
+                    : "text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+                }`
+              }
+            >
+              {({ isActive }) => (
+                <>
+                  <div className="flex items-center gap-3">
+
+                    <Icon
+                      className={`w-5 h-5 ${
+                        isActive
+                          ? "text-[#9333EA]"
+                          : "text-slate-700"
+                      }`}
+                    />
+
+                    <span>
+                      {item.name}
+                    </span>
+
+                  </div>
+
+                  {isActive && (
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#9333EA]" />
+                  )}
+                </>
+              )}
+            </NavLink>
+          );
+        })}
+
+
+        {/* =========================
+            LOGOUT
+        ========================= */}
+
+        <button
+          onClick={handleLogout}
+          className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-rose-50 hover:text-rose-600 transition-all duration-200"
+        >
+          <LogOut className="w-5 h-5 text-slate-700 group-hover:text-rose-600" />
+
+          <span>
+            Logout
+          </span>
+        </button>
+
+      </nav>
+
+    </aside>
+  );
+};
+
+export default EmployeeSidebar;
