@@ -29,8 +29,5 @@ How to run it locally
 npm install
 npm run dev
 
-Demo login
 
-- Admin: admin@cornortech.com / admin123
-- Employee: employee@cornortech.com / emp123
 
